@@ -20,24 +20,35 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>1</td>
-        <td>Thien Hoang</td>
-        <td>0988888888</td>
-        <td>email.test@mail.com</td>
-        <td>
-            <a href="#">View</a> | <a href="#">Edit</a> | <a href="#">Delete</a>
-        </td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>Super Shazam</td>
-        <td>01234567890</td>
-        <td>email1.test@mail.com</td>
-        <td>
-            <a href="#">Xem</a> | <a href="#">Sửa</a> | <a href="#">Xóa</a>
-        </td>
-    </tr>
+    @foreach($listCustomer as $item)
+        <tr>
+            <td>{{$item->id}}</td>
+            <td>{{$item->name}}</td>
+            <td>{{$item->email}}</td>
+            <td>{{$item->phonenumber}}</td>
+            <td><a href="{{route('edit',$item->id)}}">Edit</a> |<a href="{{route('delete',$item->id)}}">Delete</a></td>
+
+        </tr>
+    @endforeach
+    {{--<tr>--}}
+        {{--<td>1</td>--}}
+        {{--<td>Thien Hoang</td>--}}
+        {{--<td>0988888888</td>--}}
+        {{--<td>email.test@mail.com</td>--}}
+        {{--<td>--}}
+            {{--<a href="#">View</a> | <a href="#">Edit</a> | <a href="#">Delete</a>--}}
+        {{--</td>--}}
+    {{--</tr>--}}
+    {{--<tr>--}}
+        {{--<td>2</td>--}}
+        {{--<td>Super Shazam</td>--}}
+        {{--<td>01234567890</td>--}}
+        {{--<td>email1.test@mail.com</td>--}}
+        {{--<td>--}}
+            {{--<a href="#">Xem</a> | <a href="#">Sửa</a> | <a href="#">Xóa</a>--}}
+        {{--</td>--}}
+    {{--</tr>--}}
+
     </tbody>
 </table>
 </body>

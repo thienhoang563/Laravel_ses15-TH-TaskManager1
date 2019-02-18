@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
     //Hien thi danh sach khach hang
     public function index() {
-        return view('modules.customer.index');
+        $listCustomer = Customer::all();
+        return view('modules.customer.index',compact('listCustomer'));
     }
 
     //Hien thi form tao khach hang
