@@ -19,18 +19,22 @@ Route::prefix('customer')->group(function () {
 
     Route::get('create', function () {
         // Hiển thị form tạo khách hàng
+        return view('modules.customer.create');
     });
 
     Route::post('store', function () {
-        //Hiển thị form tạo khách hàng
+        // Xử lý lưu dữ liệu tạo khách hàng thong qua phương thức POST từ form
+        return view('modules.customer.store');
     });
 
     Route::get('{id}/show', function () {
         //Hiển thị thông tin chi tiết khách hàng
+        return view('modules.customer.show');
     });
 
     Route::get('{id}/edit', function () {
         //Hiển thị form chỉnh sửa thông tin khách hàng
+        return view('modules.customer.edit');
     });
 
     Route::patch('{id}/update', function () {
@@ -39,6 +43,7 @@ Route::prefix('customer')->group(function () {
 
     Route::delete('{id}', function () {
         //Xóa thông tin dữ liệu khách hàng
+        return view('modules.customer.delete');
     });
 });
 
